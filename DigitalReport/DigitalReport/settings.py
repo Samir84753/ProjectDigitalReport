@@ -19,7 +19,7 @@ STATIC_DIR=os.path.join(BASE_DIR,'static')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
+# SECURITY WARNING: keep the secret key used in production secret! 'mail_templated',
 SECRET_KEY = ')4=r*3@ps-jv5^sqr#pedtjw!cr=ce46)025y=cv*mfpo_*x*9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'DigitalReport.wsgi.application'
 
 DATABASES = {
     'default':{
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'ourdigitalreport',
         'USER':'root',
         'PASSWORD':'',
@@ -128,3 +128,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS=[STATIC_DIR,]
 MEDIA_URL='/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
