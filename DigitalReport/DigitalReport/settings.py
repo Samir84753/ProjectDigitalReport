@@ -56,11 +56,7 @@ ROOT_URLCONF = 'DigitalReport.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-<<<<<<< HEAD
         'DIRS': ['templates', ],
-=======
-        'DIRS': [templates],
->>>>>>> 94522a0101d1daf640fe9042e08d53cbd4cd77c7
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -129,18 +125,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-<<<<<<< HEAD
 STATICFILES_DIRS=[STATIC_DIR,]
-
-MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 MEDIA_URL='/media/'
-=======
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'static')
-]
-STATIC_ROOT = os.path.join(BASE_DIR,'assets')
-
-MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
->>>>>>> 94522a0101d1daf640fe9042e08d53cbd4cd77c7
