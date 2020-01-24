@@ -116,7 +116,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="30dp"
                 android:background="@drawable/input_section"
-                android:hint="@string/pin_as_password_for_report_security"
+                android:hint="@string/pin_as_password_for_security"
                 android:inputType="number"
                 android:padding="8dp"
                 android:paddingStart="10dp"
@@ -165,8 +165,8 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/input_section"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="@string/upload_your_image"
                 android:padding="5dp"
+                android:text="@string/upload_your_image"
                 android:textColor="@color/blue" />
 
             <Button
