@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">HospitalReport</string>
+    <string name="patient">Patient</string>
+    <string name="hospital">Hospital</string>
+    <string name="username_email">Username/Email</string>
+    <string name="login">Login</string>
+    <string name="don_t_have_a_account">Don\'t have a Account?</string>
+    <string name="sign_up">Sign Up</string>
 </resources>
