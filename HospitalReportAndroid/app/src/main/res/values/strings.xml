@@ -21,4 +21,7 @@
     <string name="upload_hospital_image">Upload Hospital Image</string>
     <string name="password">Password</string>
     <string name="pin_as_password_for_security">Pin as Password for Security</string>
+    <string name="hospital_home">Hospital Home</string>
+    <string name="whats_on_your_mind">Whats On Your Mind?</string>
+    <string name="patient_home">Patient Home</string>
 </resources>
