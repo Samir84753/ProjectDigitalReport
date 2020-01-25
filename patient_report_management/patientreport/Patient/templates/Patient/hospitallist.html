@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital_List</title>
+        <style>
+        table, tr, th
+        {
+            width:60%;
+            font-size:30px;
+            border: 1px solid black;
+            padding:20px;
+            text-align:center;
+            border-collapse:collapse;
+        }
+        a
+        {
+            text-decoration:none;
+            color: black;
+        }
+        a:hover
+        {
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+<div class="py-2">
+<center>
+<h1>List of Hospitals</h1>
+
+    <table>
+        <tr>
+            <th>Hospital</th>
+            <th>Action</th>
+        </tr>
+    {% if values %}
+	{% for val in values %}
+		{% if val.Citizennumber == cit %}
+        {% ifchanged val.Hospitalname %}
+        <tr>
+            <td>{{ val.Hospitalname  }}</td>
+            <td>
+
+             <form method="post" action="/patient/myreport?name={{val.Hospitalname}}">{% csrf_token %}
+                 <input type="hidden" name="myfile" value="{{cit}}">{{cit}}
+                  <input type="submit" value="Open" style="background-color:green;display:inline-block; color:white; padding:12px; width:90px; border:none;font-size:20px; border-radius:2px;">
+            </form>
+            </td>
+        </tr>
+        {% endifchanged%}
+		{% endif %}
+	{% endfor %}
+{% endif %}
+
+</table>
+</form>
+</center>
+</div>
+</body>
+</html>

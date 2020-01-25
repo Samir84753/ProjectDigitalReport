@@ -3,6 +3,7 @@ from.models import hospital
 from.models import hospitalactivity
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
+from django.contrib.auth import logout
 from django.http import HttpResponse
 from django.contrib import messages
 from Patient.models import patient
@@ -76,12 +77,14 @@ def loginhospital(request):
 def upload(request):
     try:
         if request.session.has_key('logged'):
+            print('no session')
             return render(request,'Hospital/upload.html')
         else:
             messages.add_message(request, messages.INFO,
                                  'You Are Not Logged IN.')
             return render(request, 'login.html')
     except:
+        print('except')
         return render(request, 'login.html')
 
 
@@ -145,8 +148,10 @@ def userdata(request):
 
 
 def out(request):
-    try:
-        del request.session['logged']
-        return redirect('http://127.0.0.1:8000/')
-    except:
-        return redirect('http://127.0.0.1:8000/')
+    logout(request)
+    return redirect('http://127.0.0.1:8000/')
+    # try:
+    #     del request.session['logged']
+    #     return redirect('http://127.0.0.1:8000/')
+    # except:
+    #     return redirect('http://127.0.0.1:8000/')

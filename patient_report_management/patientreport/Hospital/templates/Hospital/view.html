@@ -11,14 +11,14 @@
             {% load static %}
             <img src="{% static 'Image\searchicon.png'%}" id="icon" alt="User Icon"  height=180 width=70/>
              </div>
-<form action="/patient/view" method="post">{% csrf_token %}
-      <input type="number" id="login" class="fadeIn second" name="number" placeholder="Citizenship Number" required>
-      <input type="password" id="password" class="fadeIn third" name="passd" placeholder="Enter PIN" maxlength="4" minlength="4" required>
+    <form action="/patient/view" method="post">{% csrf_token %}
+          <input type="number" id="login" class="fadeIn second" name="number" placeholder="Citizenship Number" required>
+          <input type="password" id="password" class="fadeIn third" name="passd" placeholder="Enter PIN" maxlength="4" minlength="4" required>
 
-        <div class="mt-4">
-        <input type="submit" class="fadeIn fourth" value="View Report">
-        </div>
-    </form>
+            <div class="mt-4">
+            <input type="submit" class="fadeIn fourth" value="View Report">
+            </div>
+        </form>
 
 
 {% endblock %}

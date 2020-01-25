@@ -60,9 +60,9 @@
 <div style="background-color:#eec9d2;" class="py-2">
 
 
-{% if values %}
-	{% for val in values %}
-		{% if val.Citizennumber == cit %}
+{% if data %}
+	{% for val in data %}
+		{% if val.Citizennumber == cit and val.Hospitalname == hosname %}
 <div class="container col-md-10 mt-3">
 
     <div  class ="ml-4 px-4 py-3"  style="background-color:#D3F8FF; border-radius: 25px; ">
