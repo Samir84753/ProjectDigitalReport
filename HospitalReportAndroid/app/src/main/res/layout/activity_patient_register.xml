@@ -6,12 +6,181 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".patient.PatientRegisterActivity">
+
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/blue"
+        android:background="@color/darkblue"
         app:title="Patient Register"
-        app:titleTextColor="@android:color/white"
-        />
+        app:titleTextColor="@android:color/white" />
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/input_section"
+                android:hint="@string/firstname"
+                android:inputType="textPersonName"
+                android:padding="8dp"
+                android:paddingLeft="10dp"
+                android:textColor="@color/blue"
+                android:textColorHint="@color/blue" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/input_section"
+                android:hint="@string/last_name"
+                android:inputType="textPersonName"
+                android:padding="8dp"
+                android:paddingLeft="10dp"
+                android:textColor="@color/blue"
+                android:textColorHint="@color/blue" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/input_section"
+                android:hint="@string/address"
+                android:inputType="text"
+                android:padding="8dp"
+                android:paddingStart="10dp"
+                android:textColor="@color/blue"
+                android:textColorHint="@color/blue" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/input_section"
+                android:hint="@string/email_address"
+                android:inputType="textEmailAddress"
+                android:padding="8dp"
+                android:paddingLeft="10dp"
+                android:textColor="@color/blue"
+                android:textColorHint="@color/blue" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/input_section"
+                android:hint="@string/password"
+                android:padding="8dp"
+                android:paddingLeft="10dp"
+                android:textColor="@color/blue"
+                android:textColorHint="@color/blue"
+
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/input_section"
+                android:hint="@string/re_enter_password"
+                android:inputType="textPassword"
+                android:padding="8dp"
+                android:paddingLeft="10dp"
+                android:textColor="@color/blue"
+                android:textColorHint="@color/blue" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/input_section"
+                android:hint="@string/pin_as_password_for_security"
+                android:inputType="number"
+                android:padding="8dp"
+                android:paddingStart="10dp"
+                android:textColor="@color/blue"
+                android:textColorHint="@color/blue" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/input_section"
+                android:hint="@string/phone_number"
+                android:inputType="number"
+                android:padding="8dp"
+                android:paddingLeft="10dp"
+                android:textColor="@color/blue"
+                android:textColorHint="@color/blue" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/input_section"
+                android:hint="@string/citizenship_number"
+                android:inputType="number"
+                android:padding="8dp"
+                android:paddingStart="10dp"
+                android:textColor="@color/blue"
+                android:textColorHint="@color/blue" />
+
+            <ImageView
+                android:id="@+id/patient_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/choose_patient_image"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/input_section"
+                android:gravity="center_horizontal|center_vertical"
+                android:padding="5dp"
+                android:text="@string/upload_your_image"
+                android:textColor="@color/blue" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/blue"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/register"
+                android:textColor="@android:color/white" />
+
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
