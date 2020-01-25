@@ -76,14 +76,14 @@ def loginhospital(request):
 def upload(request):
     try:
         if request.session.has_key('logged'):
-            print('no session')
+
             return render(request,'Hospital/upload.html')
         else:
             messages.add_message(request, messages.INFO,
                                  'You Are Not Logged IN.')
             return render(request, 'login.html')
     except:
-        print('except')
+
         return render(request, 'login.html')
 
 
