@@ -9,19 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".patient.PatientDetailActivity"></activity>
-        <activity android:name=".hospital.HospitalsDetailActivity" />
-        <activity android:name=".patient.PatientRegisterActivity" />
-        <activity android:name=".patient.PatientLoginActivity" />
-        <activity android:name=".hospital.HospitalRegisterActivity" />
-        <activity android:name=".hospital.HospitalLoginActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".patient.PatientReportListActivity"></activity>
+        <activity android:name=".hospital.HospitalReportListActivity" />
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".patient.PatientDetailActivity" />
+        <activity android:name=".hospital.HospitalsDetailActivity" />
+        <activity android:name=".patient.PatientRegisterActivity" />
+        <activity android:name=".patient.PatientLoginActivity" />
+        <activity android:name=".hospital.HospitalRegisterActivity" />
+        <activity android:name=".hospital.HospitalLoginActivity" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

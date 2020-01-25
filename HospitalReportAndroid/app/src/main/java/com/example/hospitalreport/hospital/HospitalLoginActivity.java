@@ -1,10 +1,11 @@
 package com.example.hospitalreport.hospital;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.hospitalreport.R;
 
@@ -17,6 +18,9 @@ public class HospitalLoginActivity extends AppCompatActivity {
     @BindView(R.id.hospital_register)
     TextView hospitalRegister;
 
+    @BindView(R.id.hospital_login_button)
+    Button hospitalLoginButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,10 +28,17 @@ public class HospitalLoginActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
     }
+
     @OnClick(R.id.hospital_register)
-    public void hospitalRegisterForm()
-    {
-        Intent intent=new Intent(HospitalLoginActivity.this,HospitalRegisterActivity.class);
+    public void hospitalRegisterForm() {
+        Intent intent = new Intent(HospitalLoginActivity.this, HospitalRegisterActivity.class);
         startActivity(intent);
+    }
+
+    @OnClick(R.id.hospital_login_button)
+    public void hospitalLogin() {
+        Intent intent=new Intent(HospitalLoginActivity.this,HospitalsDetailActivity.class);
+        startActivity(intent);
+
     }
 }
