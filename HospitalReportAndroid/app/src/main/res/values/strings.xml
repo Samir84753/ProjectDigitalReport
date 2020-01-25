@@ -6,4 +6,22 @@
     <string name="login">Login</string>
     <string name="don_t_have_a_account">Don\'t have a Account?</string>
     <string name="sign_up">Sign Up</string>
+    <string name="re_enter_password">Re-enter Password</string>
+    <string name="email_address">Email Address</string>
+    <string name="firstname">Firstname</string>
+    <string name="last_name">Last Name</string>
+    <string name="address">Address</string>
+    <string name="pin_as_password_for_report_security">PIN as password for Report security</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="citizenship_number">Citizenship Number</string>
+    <string name="upload_your_image">Upload Your Image</string>
+    <string name="register">REGISTER</string>
+    <string name="hospital_name">Hospital Name</string>
+    <string name="pan_number">PAN Number</string>
+    <string name="upload_hospital_image">Upload Hospital Image</string>
+    <string name="password">Password</string>
+    <string name="pin_as_password_for_security">Pin as Password for Security</string>
+    <string name="hospital_home">Hospital Home</string>
+    <string name="whats_on_your_mind">Whats On Your Mind?</string>
+    <string name="patient_home">Patient Home</string>
 </resources>
