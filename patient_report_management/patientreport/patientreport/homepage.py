@@ -9,7 +9,6 @@ from Patient.models import patientactivity
 from django.contrib.sessions.models import Session
 import  random
 def home(request):
-
     return render(request,'home.html')
 
 

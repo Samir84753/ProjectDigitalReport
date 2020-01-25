@@ -60,12 +60,16 @@ def home(request):
                 try:
                     request.session['logged']=nam
                     from django.core.mail import send_mail
-                    send_mail('New account Register', 'Hey there,'
-                                                      '\n We have received a request that you are Register New account.'
-                                                      '\n If you did not initiate this request,Inform us Immediately.'
-                                                      '\n Greetings,\n Team Digital Report',
-                              'nepaldigital.report@gmail.com', [email],
-                              fail_silently=False)
+                    # send_mail('New account Register', 'Hey there,'
+                    #                                   '\n We have received a request that you are Register New account.'
+                    #                                   '\n If you did not initiate this request,Inform us Immediately.'
+                    #                                   '\n Greetings,\n Team Digital Report',
+                    #           'nepaldigital.report@gmail.com', [email],
+                    #           fail_silently=False)
+                    from mail_templated import EmailMessage
+
+                    message = EmailMessage('Patient/regis_email.tpl', {'user': nam},'nepaldigital.report@gmail.com',[email])
+                    message.send()
                     return render(request, 'Patient/patienthome.html',{"name": nam, 'id': hid,'number':num, 'profile': profile, 'activity': user,'activity2':user2})
                 except:
                     return render(request, 'Patient/patientlogin.html')
@@ -73,7 +77,6 @@ def home(request):
             messages.add_message(request, messages.INFO, 'Invalid! Email or Email exists already please Enter Correctly !')
             return render(request, 'home.html')
     else:
-        messages.add_message(request, messages.INFO, 'Invalid! Email or Email exists already please Enter Correctly !')
         return render(request, 'home.html')
 
 
@@ -144,8 +147,8 @@ def view(request):
                 setpin=patient.objects.get(citizennumber=citizen1)
                 data=setpin.patientpin
                 if pin==data:
-                    value=report.objects.all().order_by('-uploaddate')
-                    return render(request,'Patient/view.html',{'values':value,'cit':int(citizen1)})
+                    value=report.objects.all().order_by('Hospitalname')
+                    return render(request,'Patient/hospitallist.html',{'values':value,'cit':int(citizen1)})
 
                 else:
                     messages.add_message(request, messages.INFO,
@@ -250,3 +253,10 @@ def userdata(request):
                           {"name": nam,'number': hid, 'profile': profile, 'activity': user,'activity2':user2})
         return render(request, 'Patient/patienthome.html',
                       {"name": nam, 'number': hid, 'profile': profile, 'activity': user,'activity2':user2})
+
+def myreport(request):
+    citizennum = request.POST.get('myfile')
+    my_hos_name = request.GET.get('name')
+    data = report.objects.all()
+    return render(request, 'Patient/view.html', {'cit': int(citizennum),'data':data,'hosname':my_hos_name})
+

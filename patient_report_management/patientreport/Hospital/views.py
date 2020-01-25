@@ -3,6 +3,7 @@ from.models import hospital
 from.models import hospitalactivity
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
+from django.contrib.auth import logout
 from django.http import HttpResponse
 from django.contrib import messages
 from Patient.models import patient
@@ -52,12 +53,11 @@ def home(request):
                 try:
                     request.session['logged']=nam
                     from django.core.mail import send_mail
-                    send_mail('New account Register', 'Hey there,'
-                                                      '\n We have received a request that you are Register New account.'
-                                                      '\n If you did not initiate this request,Inform us Immediately..'
-                                                      '\n Greetings,\n Team Digital Report',
-                              'nepaldigital.report@gmail.com', [email],
-                              fail_silently=False)
+                    from mail_templated import EmailMessage
+
+                    message = EmailMessage('Patient/regis_email.tpl', {'user': nam}, 'nepaldigital.report@gmail.com',
+                                           [email])
+                    message.send()
                     return render(request, 'Hospital/hospitalhome.html',{"name":nam,'id':hid,'profile':profile,'activity':user,'activity2':user2})
                 except:
                     return render(request, 'Hospital/hospitallogin.html')
@@ -76,12 +76,14 @@ def loginhospital(request):
 def upload(request):
     try:
         if request.session.has_key('logged'):
+            print('no session')
             return render(request,'Hospital/upload.html')
         else:
             messages.add_message(request, messages.INFO,
                                  'You Are Not Logged IN.')
             return render(request, 'login.html')
     except:
+        print('except')
         return render(request, 'login.html')
 
 
@@ -145,8 +147,10 @@ def userdata(request):
 
 
 def out(request):
-    try:
-        del request.session['logged']
-        return redirect('http://127.0.0.1:8000/')
-    except:
-        return redirect('http://127.0.0.1:8000/')
+    logout(request)
+    return redirect('http://127.0.0.1:8000/')
+    # try:
+    #     del request.session['logged']
+    #     return redirect('http://127.0.0.1:8000/')
+    # except:
+    #     return redirect('http://127.0.0.1:8000/')

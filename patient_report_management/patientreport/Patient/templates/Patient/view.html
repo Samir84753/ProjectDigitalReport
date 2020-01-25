@@ -5,7 +5,9 @@
 
 <link rel="stylesheet" type="text/css" href="{%static 'CSS/styles/contact.css'%}">
 <link rel="stylesheet" type="text/css" href="{% static 'CSS/styles/contact_responsive.css'%}">
+<style>
 
+</style>
 
 
 {% endblock %}
@@ -57,12 +59,12 @@
 </div>
 
 
-<div style="background-color:#eec9d2;" class="py-2">
+<div style="background-color:#333eee">
 
 
-{% if values %}
-	{% for val in values %}
-		{% if val.Citizennumber == cit %}
+{% if data %}
+	{% for val in data %}
+		{% if val.Citizennumber == cit and val.Hospitalname == hosname %}
 <div class="container col-md-10 mt-3">
 
     <div  class ="ml-4 px-4 py-3"  style="background-color:#D3F8FF; border-radius: 25px; ">
@@ -71,12 +73,13 @@
 
 		<h3><font color="#F7743B "> <u>Description</u>: </font> </h3><p> {{val.Description}} </p>
         <div class="container col-md-3">
-            <form action="show" method="post" class="col-md-6 mt-4">{% csrf_token %}
-            <input type="submit" class="btn btn-primary" name="{{val.id}}" value="Show Pdf">
-                </form>
-             <form  action="down" method="post" class="col-md-6 pb-1 mt-3">{% csrf_token %}
-        <input type="submit" class="btn btn-primary" name="{{val.id}}" value="Download Pdf">
-             </form></div>
+				<form action="show" method="post" class="col-md-6 mt-4">{% csrf_token %}
+				<input type="submit" class="btn btn-primary" name="{{val.id}}" value="Show Pdf">
+					</form>
+				 <form  action="down" method="post" class="col-md-6 pb-1 mt-3">{% csrf_token %}
+			<input type="submit" class="btn btn-primary" name="{{val.id}}" value="Download Pdf">
+				 </form>
+		</div>
 
     </div>
 </div>
@@ -100,7 +103,7 @@
 					<div class="col">
 						<div class="copyright_content d-flex flex-lg-row flex-column align-items-lg-center justify-content-start">
 							<div class="cr">
-								Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This is made with NCIT College
+								Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved |  Made by Team Lumineers
 							</div>
 
 						</div>

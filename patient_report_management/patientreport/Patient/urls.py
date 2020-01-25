@@ -10,4 +10,5 @@ urlpatterns = [
     path('show',views.show),
     path('down',views.down),
     path('home/userdata',views.userdata),
+    path('myreport',views.myreport),
 ]
